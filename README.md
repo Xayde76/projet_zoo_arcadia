@@ -33,7 +33,7 @@ cd arcadia
 -- Créez une base de données
 CREATE DATABASE arcadia;
 
--- Importez les tables via un fichier SQL
-BDD/BDD.sql;
+-- Importez les tables (et leurs valeurs) contenues dans le fichier texte
+BDD/BDD.txt;
 
 Développé par : Romaric BOSSUT
