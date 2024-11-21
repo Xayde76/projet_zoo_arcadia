@@ -30,7 +30,6 @@ git clone https://github.com/Xayde76/projet_zoo_arcadia.git
 # Créer la base de donnée
 -- Créez une base de données
 CREATE DATABASE arcadia;
-
 -- Importez les tables via un fichier SQL
 BDD/BDD.sql;
 
