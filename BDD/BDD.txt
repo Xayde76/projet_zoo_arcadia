@@ -1,0 +1,70 @@
+CREATE TABLE avis (
+    avis_id INT AUTO_INCREMENT PRIMARY KEY,
+    pseudo VARCHAR(50),
+    commentaire VARCHAR(500),
+    isVisible BOOL DEFAULT FALSE
+);
+
+CREATE TABLE image (
+    image_id INT AUTO_INCREMENT PRIMARY KEY,
+    image_data LONGBLOB
+);
+
+CREATE TABLE habitat (
+    habitat_id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(50),
+    description  VARCHAR(1000),
+    commentaire_habitat  VARCHAR(50),
+    image_id INT,
+    FOREIGN KEY (image_id) REFERENCES image(image_id) ON DELETE CASCADE
+);
+
+CREATE TABLE race (
+    race_id INT AUTO_INCREMENT PRIMARY KEY,
+    avel VARCHAR(50)
+);
+
+CREATE TABLE animal (
+    animal_id INT AUTO_INCREMENT PRIMARY KEY,
+    prenom VARCHAR(50),
+    etat VARCHAR(50),
+    habitat_id INT,
+    race_id INT,
+    FOREIGN KEY (habitat_id) REFERENCES habitat(habitat_id) ON DELETE CASCADE,
+    FOREIGN KEY (race_id) REFERENCES race(race_id) ON DELETE CASCADE
+);
+
+CREATE TABLE role (
+	role_id INT AUTO_INCREMENT PRIMARY KEY,
+    label VARCHAR(50)
+);
+
+CREATE TABLE utilisateur (
+	username VARCHAR(50) PRIMARY KEY,
+    password VARCHAR(255),
+    nom VARCHAR(50),
+    prenom VARCHAR(50),
+    role_id INT,
+    FOREIGN KEY (role_id) REFERENCES role(role_id) ON DELETE CASCADE
+);
+
+CREATE TABLE service (
+	service_id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(50),
+    description VARCHAR(1000)
+);
+
+CREATE TABLE nourriture (
+	nourriture_id INT AUTO_INCREMENT PRIMARY KEY,
+    animal_id INT,
+    quantite INT,
+    date  DATE,
+    heure TIME,
+    FOREIGN KEY (animal_id) REFERENCES animal(animal_id) ON DELETE CASCADE
+);
+
+INSERT INTO role (label) VALUES
+('Administrateur'),
+('Vétérinaire'),
+('Employé');
+
