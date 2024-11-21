@@ -38,6 +38,6 @@ BDD/BDD.sql;
 Le fichier config.php permet de configurer les paramètres de connexion à votre base de données MySQL. Ouvrez ce fichier et renseignez les informations de connexion correspondant à votre environnement local 
 
 # Lancer le site
-Accédez à votre serveur local via votre navigateur en allant sur http://localhost/arcadia/. Le site s'ouvrira automatiquement et vous serez redirigé vers la page d'accueil (index.php).
+Accédez à votre serveur local via votre navigateur en allant sur http://localhost/nom_du_fichier_où_se_situe_le_site/. Le site s'ouvrira automatiquement et vous serez redirigé vers la page d'accueil (index.php).
 
 Développé par : Romaric BOSSUT
